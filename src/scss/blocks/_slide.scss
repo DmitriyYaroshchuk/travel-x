@@ -1,0 +1,147 @@
+.slide {
+  height: 100vh;
+  overflow: hidden;
+  padding-bottom: 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  //background-image: url("./../../img/slider-bg/01.jpg");
+  //background-repeat: no-repeat;
+  //background-position: center center;
+  //background-size: cover;
+  background-color: #555;
+  color: #fff;
+  cursor: grab;
+
+  &--norway {
+    background: var(--radial-bg),
+    var(--liner-bg),
+    url("./../../img/slider-bg/01.jpg");
+    @include background;
+  }
+
+  &--austria {
+    background: var(--radial-bg),
+    var(--liner-bg),
+    url("./../../img/slider-bg/02.jpg");
+    @include background;
+  }
+
+  &--uae {
+    background: var(--radial-bg),
+    var(--liner-bg),
+    url("./../../img/slider-bg/03.jpg");
+    @include background;
+  }
+
+  &--thailand {
+    background: var(--radial-bg),
+    var(--liner-bg),
+    url("./../../img/slider-bg/04.jpg");
+    @include background;
+  }
+
+  &--morocco {
+    background: var(--radial-bg),
+    var(--liner-bg),
+    url("./../../img/slider-bg/05.jpg");
+    @include background;
+  }
+
+  &:before {
+    content: '';
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+
+.slide__header {
+  text-align: center;
+  position: relative;
+}
+
+.tagline {
+  width: 100%;
+  position: absolute;
+  top: -8px;
+  font-weight: 500;
+  font-size: 1.56vw;
+  line-height: 1.23;
+  letter-spacing: 0.55em;
+  color: rgba(255, 255, 255, 0.7);
+
+}
+
+.slide__title {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 13vw;
+  font-weight: 700;
+  line-height: 1.22;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  @include bg(#0000);
+
+
+  &--norway {
+    @include bg(#051d27);
+  }
+
+  &--austria {
+    @include bg(#122127);
+  }
+
+  &--uae {
+    @include bg(#aa6621);
+  }
+
+  &--thailand {
+    @include bg(#2e7c88);
+  }
+
+  &--morocco {
+    @include bg(#757575);
+  }
+}
+
+.slide__locations {
+  display: flex;
+  gap: 30px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+@include tablet {
+  .slide {
+    padding-bottom: 60px;
+  }
+
+  .slide__locations {
+    width: 90%;
+  }
+}
+
+@include mobile {
+  .slide {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .tagline {
+    font-size: 3vw;
+  }
+
+  .slide__title {
+    font-size: 19vw;
+  }
+
+  .slide__locations {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

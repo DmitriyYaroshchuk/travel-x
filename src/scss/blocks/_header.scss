@@ -1,0 +1,118 @@
+.header {
+	height: 100vh;
+	position: relative;
+	background-color: #c4c4c4;
+	color: #fff;
+}
+
+.header a {
+	color: #fff;
+}
+
+.header__content {
+	position: absolute;
+	z-index: 9;
+	top: 50px;
+	left: 70px;
+	right: 70px;
+	bottom: 80px;
+
+	//background-color: rgba(255, 255, 255, 0.09);
+	pointer-events: none;
+}
+
+.header__nav {
+	pointer-events: all;
+}
+
+.header__socials {
+	pointer-events: all;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.header__see-more {
+	pointer-events: all;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+}
+
+.header__slider-controls {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	pointer-events: all;
+
+}
+
+.header__scrollbar {
+	pointer-events: all;
+	position: absolute;
+	right: 0;
+	top: 45%;
+
+	width: 326px;
+	height: 2px;
+	background-color: transparent;
+
+	transform: rotate(90deg) translate(50%, 0);
+	transform-origin: right top;
+}
+
+@include tablet {
+	.header__content {
+		top: 40px;
+		left: 40px;
+		right: 40px;
+		bottom: 60px;
+	}
+
+	.header__slider-controls,
+	.header__see-more {
+		display: none;
+	}
+}
+
+@include mobile {
+	.header__content {
+		top: 30px;
+		left: 5%;
+		right: 5%;
+		bottom: 30px;
+	}
+
+	.header__socials {
+		display: none;
+	}
+
+	.header__scrollbar {
+		transform: none;
+		top: unset;
+		bottom: -15px;
+		left: 0;
+		right: unset;
+		width: 100%;
+	}
+}
+
+@media screen and (max-height: 600px){
+	.header__socials {
+		top: 40%;
+	}
+}
+
+@media screen and (max-width: 1023px){
+	.header__see-more {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 767px) and (max-height: 700px) {
+	.header__scrollbar {
+		width: 300px;
+	}
+}
